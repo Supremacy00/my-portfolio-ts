@@ -24,7 +24,7 @@ export const metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://explore-my-portfolio.vercel.app/assets/images/my-portfolio-opengraph-photo.png",
+        url: "https://explore-my-portfolio.vercel.app/assets/images/my-portfolio-opengraph-photo.jpg",
         width: 1200,
         height: 630,
         alt: "Portfolio OpenGraph Image",
@@ -38,7 +38,7 @@ export const metadata = {
       "Discover projects, skills, and insights from a dedicated frontend developer.",
     images: [
       {
-        url: "https://explore-my-portfolio.vercel.app/assets/images/my-portfolio-opengraph-photo.png",
+        url: "https://explore-my-portfolio.vercel.app/assets/images/my-portfolio-opengraph-photo.jpg",
         width: 1200,
         height: 630,
         alt: "Portfolio Twitter Card Image",
