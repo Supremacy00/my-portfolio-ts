@@ -18,13 +18,13 @@ export const metadata = {
     title: "Explore My Portfolio",
     description:
       "Dive into the journey of a frontend developer. Explore dynamic projects, innovative solutions, and a commitment to crafting exceptional digital experiences.",
-    url: "https://explore-my-portfolio.vercel.app/",
+    url: "https://my-portfolio-ts.vercel.app/",
     type: "website",
     siteName: "Explore My Portfolio",
     locale: "en_US",
     images: [
       {
-        url: "https://explore-my-portfolio.vercel.app/assets/images/my-portfolio-opengraph-photo.jpg",
+        url: "https://my-portfolio-ts.vercel.app/assets/images/my-portfolio-opengraph-photo.jpg",
         width: 1200,
         height: 630,
         alt: "Portfolio OpenGraph Image",
@@ -38,7 +38,7 @@ export const metadata = {
       "Discover projects, skills, and insights from a dedicated frontend developer.",
     images: [
       {
-        url: "https://explore-my-portfolio.vercel.app/assets/images/my-portfolio-opengraph-photo.jpg",
+        url: "https://my-portfolio-ts.vercel.app/assets/images/my-portfolio-opengraph-photo.jpg",
         width: 1200,
         height: 630,
         alt: "Portfolio Twitter Card Image",
