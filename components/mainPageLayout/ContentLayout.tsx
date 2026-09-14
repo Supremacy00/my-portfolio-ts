@@ -18,7 +18,7 @@ const ContentLayout = () => {
 
   return (
     <div className="relative font-IBM">
-      <AnimatePresence initial={false} mode="popLayout">
+      <AnimatePresence mode="popLayout" initial={false}>
         {activeSection === "About" && (
           <motion.div
             key="About"

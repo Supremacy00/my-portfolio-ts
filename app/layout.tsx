@@ -3,14 +3,13 @@ import "./globals.css";
 import { MyContextProvider } from "@/context/ComponentContext";
 import NavMobile from "@/components/navbar/NavMobile";
 import { ThemeProvider } from "@/context/theme-provider";
-import { Suspense } from "react";
-import PageLoader from "@/components/loader/PageLoader";
 import { Toaster } from "sonner";
+import PageLoader from "@/components/loader/PageLoader";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  metadataBase: new URL("https://explore-my-portfolio.vercel.app/"),
+  metadataBase: new URL("https://my-portfolio-ts.vercel.app/"),
   title: "Explore My Portfolio - Frontend Developer & Creator",
   description:
     "Showcasing the projects, skills, and expertise of a passionate frontend developer. Discover a world of seamless designs, intuitive user interfaces, and innovative solutions.",
@@ -69,15 +68,17 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider>
           <MyContextProvider>
-            <NavMobile />
-            <Suspense fallback={<PageLoader />}>{children}</Suspense>
-            <Toaster
-              position="top-center"
-              richColors
-              style={{
-                zIndex: 9999,
-              }}
-            />
+            <PageLoader>
+              <NavMobile />
+              {children}
+              <Toaster
+                position="top-center"
+                richColors
+                style={{
+                  zIndex: 9999,
+                }}
+              />
+            </PageLoader>
           </MyContextProvider>
         </ThemeProvider>
       </body>

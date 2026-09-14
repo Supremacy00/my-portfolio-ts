@@ -35,11 +35,24 @@ const urlFragmentFor = (section: Section) => {
   return `#${section.toLowerCase()}`;
 };
 
+// Helper function to safely detect desktop on initial frame
+const getIsDesktopOnMount = () => {
+  if (typeof window !== "undefined") {
+    return window.innerWidth >= 1074;
+  }
+  return false;
+};
+
 export const MyContextProvider = ({ children }: MyContextProviderProps) => {
-  const [activeSection, setActiveSection] = useState<Section | "">("");
+  // Initialize desktop with "About" on mount right away
+  const [activeSection, setActiveSection] = useState<Section | "">(
+    getIsDesktopOnMount() ? "About" : "",
+  );
   const [isComponentVisible, setComponentVisible] =
     useState<ComponentVisibility>("All");
-  const [scrolledSection, setScrolledSection] = useState<Section | "">("");
+  const [scrolledSection, setScrolledSection] = useState<Section | "">(
+    getIsDesktopOnMount() ? "About" : "",
+  );
   const [isMobile, setIsMobile] = useState<boolean | null>(null);
 
   const isManualScrollRef = useRef(false);
@@ -70,11 +83,13 @@ export const MyContextProvider = ({ children }: MyContextProviderProps) => {
 
     if (isMobile) {
       // Mobile: Entry at '/' - keep state empty until scrolled or clicked
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setActiveSection("");
+      setScrolledSection("");
       window.history.replaceState(null, "", "/");
       window.scrollTo(0, 0);
     } else {
-      // Desktop: Default to '#about' tab active
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+      // Desktop: Keep "About" active and update URL
       setActiveSection("About");
       setScrolledSection("About");
       window.history.replaceState(null, "", "#about");
@@ -88,7 +103,6 @@ export const MyContextProvider = ({ children }: MyContextProviderProps) => {
     setScrolledSection(section);
     hasInteractedRef.current = true;
 
-    // Both mobile and desktop get section hash when clicked
     window.history.pushState(null, "", urlFragmentFor(section));
   }, []);
 
@@ -193,7 +207,6 @@ export const MyContextProvider = ({ children }: MyContextProviderProps) => {
           }
         }
 
-        // On mobile, if user scrolled back up past all sections to top profile, clear active section & return URL to '/'
         if (isMobile && !foundActiveSection && window.scrollY < 100) {
           setScrolledSection("");
           setActiveSection("");

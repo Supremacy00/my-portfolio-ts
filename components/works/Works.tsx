@@ -20,7 +20,11 @@ const Works = () => {
               <div className="w-full h-px bg-gray-200 dark:bg-custom2" />
             </div>
             <div>
-              <p className="py-5 text-base leading-7 text-light2 dark:text-dark2 px-7">{`Dive into my coding projects, where I've translated ideas into fully functional applications.`}</p>
+              <p className="py-5 text-base leading-7 text-light2 dark:text-dark2 px-7">
+                Explore the products and digital experiences I&apos;ve built,
+                from projects developed independently to real-world applications
+                I&apos;ve helped bring to life for businesses and their users.
+              </p>
               <div className="flex w-full justify-center lg:justify-end">
                 <div className="w-fit custom-cursor flex flex-wrap items-center gap-5 px-7 text-base">
                   <h3
@@ -32,6 +36,16 @@ const Works = () => {
                     onClick={() => handleIsComponentVisibility("All")}
                   >
                     All
+                  </h3>
+                  <h3
+                    className={`${
+                      isComponentVisible === "Professional"
+                        ? "text-custom5"
+                        : "text-light dark:text-dark hover:text-custom5 dark:hover:text-custom5"
+                    } cursor-pointer transition-colors duration-300 ease-in-out`}
+                    onClick={() => handleIsComponentVisibility("Professional")}
+                  >
+                    Professional
                   </h3>
                   <h3
                     className={`${

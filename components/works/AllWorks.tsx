@@ -6,6 +6,7 @@ import EmptyWorks from "../_ui/EmptyWorks";
 
 const AllWorks = () => {
   const allWorksSet = new Set<string>([
+    ...worksData.professional.map((work) => work.title),
     ...worksData.innovations.map((work) => work.title),
     ...worksData.panoramas.map((work) => work.title),
     ...worksData.symphonies.map((work) => work.title),
@@ -13,6 +14,9 @@ const AllWorks = () => {
 
   const allWorks: Work[] = [...allWorksSet]
     .map((title) => {
+      const professional = worksData.professional.find(
+        (work) => work.title === title,
+      );
       const innovation = worksData.innovations.find(
         (work) => work.title === title,
       );
@@ -21,23 +25,21 @@ const AllWorks = () => {
         (work) => work.title === title,
       );
 
-      return innovation || panorama || symphony;
+      return professional || innovation || panorama || symphony;
     })
     .filter((work): work is Work => Boolean(work));
 
-  const sortedWorksAphabetically = [...allWorks].sort((a, b) =>
-    a.title.localeCompare(b.title),
-  );
+  const sortedWorks = [...allWorks].sort((a, b) => a.order - b.order);
 
-  if (sortedWorksAphabetically.length === 0) {
-    return <EmptyWorks title="Projects" />;
+  if (sortedWorks.length === 0) {
+    return <EmptyWorks category="All" />;
   }
 
   return (
     <section>
       <AnimatePresence>
         <article className="grid grid-cols-1 gap-5 pb-12 lg:grid-cols-2 px-7 pt-7">
-          {sortedWorksAphabetically.map((work) => (
+          {sortedWorks.map((work) => (
             <motion.article
               key={work.id}
               initial={{ opacity: 0, scale: 0.5 }}

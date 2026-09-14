@@ -6,7 +6,7 @@ import EmptyWorks from "../_ui/EmptyWorks";
 
 const Symphonies = () => {
   if (worksData.symphonies.length === 0) {
-    return <EmptyWorks title="Symphonies" />;
+    return <EmptyWorks category="Symphonies" />;
   }
 
   return (

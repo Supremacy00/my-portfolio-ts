@@ -4,15 +4,16 @@ import { worksData } from "../../constant/data";
 import Link from "next/link";
 import EmptyWorks from "../_ui/EmptyWorks";
 
-const Panoramas = () => {
-  if (worksData.panoramas.length === 0) {
-    return <EmptyWorks category="Panoramas" />;
+const Professional = () => {
+  if (worksData.professional.length === 0) {
+    return <EmptyWorks category="Professional" />;
   }
+
   return (
     <section>
       <AnimatePresence>
         <article className="grid grid-cols-1 gap-5 pb-12 lg:grid-cols-2 px-7 pt-7">
-          {worksData.panoramas.map((work) => (
+          {worksData.professional.map((work) => (
             <motion.article
               key={work.id}
               initial={{ opacity: 0, scale: 0.5 }}
@@ -36,7 +37,7 @@ const Panoramas = () => {
                     />
                     <div className="cursor-pointer custom-cursor">
                       <div className="absolute top-0 bg-linear-to-r from-[#1C9CEA33] w-full h-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out"></div>
-                      <span className="text-[27px] text-dark absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out ">
+                      <span className="text-[25px] text-dark absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out ">
                         {work.icon}
                       </span>
                     </div>
@@ -67,4 +68,4 @@ const Panoramas = () => {
   );
 };
 
-export default Panoramas;
+export default Professional;

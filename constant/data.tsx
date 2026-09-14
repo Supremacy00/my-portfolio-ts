@@ -1,5 +1,5 @@
 import { FaRegLightbulb } from "react-icons/fa";
-import { FaCode } from "react-icons/fa6";
+import { FaCode, FaGlobe } from "react-icons/fa6";
 import { BiSolidCustomize } from "react-icons/bi";
 import { FaDiagramProject } from "react-icons/fa6";
 import { MdWorkspacesFilled } from "react-icons/md";
@@ -43,9 +43,11 @@ export interface Work {
   category: string;
   Link: string;
   id: string;
+  order: number;
 }
 
 export interface WorksData {
+  professional: Work[];
   innovations: Work[];
   panoramas: Work[];
   symphonies: Work[];
@@ -180,40 +182,74 @@ export const blogData: BlogItem[] = [
 ];
 
 export const worksData: WorksData = {
+  professional: [
+    {
+      id: "doos-logistics",
+      title: "Doos Logistics",
+      icon: <FaGlobe />,
+      category: "Professional",
+      workPhoto: "/assets/images/doos-logistics.png",
+      Link: "https://www.dooslogistics.com/",
+      order: 1,
+    },
+
+    {
+      id: "enerflow",
+      title: "Enerflow",
+      icon: <FaGlobe />,
+      category: "Professional",
+      workPhoto: "/assets/images/enerflow.png",
+      Link: "https://enerfloweng.com/",
+      order: 2,
+    },
+    {
+      id: "xpressdrop",
+      title: "XpressDrop",
+      workPhoto: "/assets/images/xpressdrop.png",
+      icon: <FaGlobe />,
+      category: "Professional",
+      Link: "https://www.usexpressdrop.com/",
+      order: 3,
+    },
+  ],
   innovations: [
     {
+      id: "chrome-extension-1",
       title: "Chrome Extension",
       workPhoto: "/assets/images/chromeextension.jpg",
       icon: <MdWorkspacesFilled />,
       category: "Innovations",
       Link: "https://zuri-internship-task-five.vercel.app/",
-      id: "chrome-extension-1",
+      order: 6,
     },
     {
+      id: "real-estate-2",
       title: "Real Estate",
       workPhoto: "/assets/images/realestate.jpg",
       icon: <MdWorkspacesFilled />,
       category: "Innovations",
       Link: "https://poshhomez.vercel.app/",
-      id: "real-estate-2",
+      order: 5,
     },
   ],
   panoramas: [
     {
+      id: "carro-cars-1",
       title: "Carro Cars Dealership",
       workPhoto: "/assets/images/carrocars.png",
       icon: <FaDiagramProject />,
       category: "Panoramas",
       Link: "https://carrocars.vercel.app/",
-      id: "carro-cars-1",
+      order: 4,
     },
     {
+      id: "dishup-food-2",
       title: "Dishup Food App",
       workPhoto: "/assets/images/dishupfoods.jpg",
       icon: <FaDiagramProject />,
       category: "Panoramas",
       Link: "https://dishup-food.vercel.app/",
-      id: "dishup-food-2",
+      order: 7,
     },
   ],
   symphonies: [],

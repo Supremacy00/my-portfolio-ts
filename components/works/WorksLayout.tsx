@@ -6,6 +6,7 @@ import AllWorks from "./AllWorks";
 import Symphonies from "./Symphonies";
 import Panoramas from "./Panoramas";
 import Innovations from "./Innovations";
+import Professional from "./Professional";
 
 const WorksLayout = () => {
   const { isComponentVisible } = useMyComponentContext();
@@ -14,6 +15,12 @@ const WorksLayout = () => {
     <section>
       <Activity mode={isComponentVisible === "All" ? "visible" : "hidden"}>
         <AllWorks />
+      </Activity>
+
+      <Activity
+        mode={isComponentVisible === "Professional" ? "visible" : "hidden"}
+      >
+        <Professional />
       </Activity>
 
       <Activity

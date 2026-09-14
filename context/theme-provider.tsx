@@ -1,5 +1,4 @@
 "use client";
-
 import {
   createContext,
   useContext,
@@ -7,7 +6,6 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import PageLoader from "@/components/loader/PageLoader";
 
 type Theme = "light" | "dark";
 
@@ -24,7 +22,6 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [theme, setTheme] = useState<Theme | null>(null);
-  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as Theme | null;
@@ -39,8 +36,6 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
 
       setTheme(userPrefersDark ? "dark" : "light");
     }
-
-    setLoading(false);
   }, []);
 
   useEffect(() => {
@@ -55,10 +50,6 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
-
-  if (loading) {
-    return <PageLoader />;
-  }
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
