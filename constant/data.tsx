@@ -1,16 +1,23 @@
-import { FaRegLightbulb } from "react-icons/fa";
-import { FaCode, FaGlobe } from "react-icons/fa6";
-import { BiSolidCustomize } from "react-icons/bi";
+import { FaMobileAlt, FaProjectDiagram, FaTachometerAlt } from "react-icons/fa";
+import {
+  FaCode,
+  FaGlobe,
+  FaLayerGroup,
+  FaPlug,
+  FaRocket,
+  FaVial,
+} from "react-icons/fa6";
 import { FaDiagramProject } from "react-icons/fa6";
 import { MdWorkspacesFilled } from "react-icons/md";
 import { ReactNode } from "react";
 
 export interface AboutItem {
+  id: number;
   icon: ReactNode;
   title: string;
   description: string;
   modification: string;
-  id: number;
+  color: string;
 }
 
 export interface WorkingSkill {
@@ -28,21 +35,22 @@ export interface EducationItem {
 }
 
 export interface BlogItem {
+  id: number;
   blogPhoto: string;
   date: string;
   title: string;
   category: string;
   description: string;
-  id: number;
 }
 
 export interface Work {
+  id: string;
   title: string;
   workPhoto: string;
   icon: ReactNode;
   category: string;
   Link: string;
-  id: string;
+
   order: number;
 }
 
@@ -55,36 +63,76 @@ export interface WorksData {
 
 export const aboutData: AboutItem[] = [
   {
-    icon: <BiSolidCustomize />,
-    title: "Branding & Logo",
+    icon: <FaCode />,
+    title: "Frontend Development",
     description:
-      "I create designs to help people to quickly identify their products and organization.",
-    modification: "BL",
+      "I build responsive, scalable, and user-friendly web applications using React, Next.js, TypeScript, and modern frontend technologies.",
+    modification: "FD",
+    color: "text-custom5",
     id: 1,
   },
   {
-    icon: <FaCode />,
-    title: "Web Development",
+    icon: <FaMobileAlt />,
+    title: "Mobile Development",
     description:
-      "I create and design the user interface (UI) and user experience (UX) of websites.",
-    modification: "WD",
+      "I build cross-platform mobile applications with React Native and Expo, focused on smooth, reliable, and intuitive user experiences.",
+    modification: "MD",
+    color: "text-amber-800",
     id: 2,
   },
   {
-    icon: <FaRegLightbulb />,
-    title: "Mobile Development",
+    icon: <FaLayerGroup />,
+    title: "UI Development",
     description:
-      "Mobile Developer, passionate about building seamless and innovative apps that enhance everyday experiences.",
-    modification: "UD",
+      "I turn designs and ideas into polished, responsive interfaces using reusable components and consistent design patterns.",
+    modification: "UI",
+    color: "text-cyan-700",
     id: 3,
   },
   {
-    icon: <FaRegLightbulb />,
-    title: "Photoshop",
+    icon: <FaPlug />,
+    title: "API Integration",
     description:
-      "Photoshop Expert, photoshop is an image creation, graphic design and photo editing software.",
-    modification: "PS",
+      "I connect applications with backend services and APIs for authentication, data management, payments, and other application workflows.",
+    modification: "AI",
+    color: "text-custom6",
     id: 4,
+  },
+  {
+    icon: <FaProjectDiagram />,
+    title: "State Management",
+    description:
+      "I manage application state using Redux Toolkit, Zustand, and MobX, while using React Query for server-state management and data synchronization.",
+    modification: "SM",
+    color: "text-purple-700",
+    id: 5,
+  },
+  {
+    icon: <FaTachometerAlt />,
+    title: "Performance Optimization",
+    description:
+      "I optimize applications for faster loading, efficient rendering, and smoother interactions across web and mobile platforms.",
+    modification: "PO",
+    color: "text-green-700",
+    id: 6,
+  },
+  {
+    icon: <FaVial />,
+    title: "Testing",
+    description:
+      "I write frontend tests with tools such as Jest to help maintain reliable, predictable, and maintainable applications.",
+    modification: "TS",
+    color: "text-red-700",
+    id: 7,
+  },
+  {
+    icon: <FaRocket />,
+    title: "Product Development",
+    description:
+      "I turn product ideas and designs into working digital experiences, contributing across planning, development, integration, and deployment.",
+    modification: "PD",
+    color: "text-blue-700",
+    id: 8,
   },
 ];
 
