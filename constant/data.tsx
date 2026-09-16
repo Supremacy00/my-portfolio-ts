@@ -4,7 +4,7 @@ import {
   FaGlobe,
   FaLayerGroup,
   FaPlug,
-  FaRocket,
+  FaRobot,
   FaVial,
 } from "react-icons/fa6";
 import { FaDiagramProject } from "react-icons/fa6";
@@ -90,13 +90,22 @@ export const aboutData: AboutItem[] = [
     id: 3,
   },
   {
+    icon: <FaRobot />,
+    title: "AI-Powered Development",
+    description:
+      "I use AI tools and APIs to accelerate product development, from understanding business requirements and shaping solutions to building, integrating, testing, and deploying production-ready applications.",
+    modification: "AI",
+    color: "text-blue-700",
+    id: 4,
+  },
+  {
     icon: <FaPlug />,
     title: "API Integration",
     description:
       "I connect applications with backend services and APIs for authentication, data management, payments, and other application workflows.",
-    modification: "AI",
+    modification: "API",
     color: "text-custom6",
-    id: 4,
+    id: 5,
   },
   {
     icon: <FaProjectDiagram />,
@@ -105,7 +114,7 @@ export const aboutData: AboutItem[] = [
       "I manage application state using Redux Toolkit, Zustand, and MobX, while using React Query for server-state management and data synchronization.",
     modification: "SM",
     color: "text-purple-700",
-    id: 5,
+    id: 6,
   },
   {
     icon: <FaTachometerAlt />,
@@ -114,7 +123,7 @@ export const aboutData: AboutItem[] = [
       "I optimize applications for faster loading, efficient rendering, and smoother interactions across web and mobile platforms.",
     modification: "PO",
     color: "text-green-700",
-    id: 6,
+    id: 7,
   },
   {
     icon: <FaVial />,
@@ -123,15 +132,6 @@ export const aboutData: AboutItem[] = [
       "I write frontend tests with tools such as Jest to help maintain reliable, predictable, and maintainable applications.",
     modification: "TS",
     color: "text-red-700",
-    id: 7,
-  },
-  {
-    icon: <FaRocket />,
-    title: "Product Development",
-    description:
-      "I turn product ideas and designs into working digital experiences, contributing across planning, development, integration, and deployment.",
-    modification: "PD",
-    color: "text-blue-700",
     id: 8,
   },
 ];
