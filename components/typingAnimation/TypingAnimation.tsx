@@ -7,12 +7,11 @@ const TypingAnimation = () => {
     const options = {
       strings: [
         "Frontend Developer",
-        "Freelancer",
-        "Web Developer",
-        "Programmer",
         "Mobile Developer",
+        "React &amp; Next.js Developer",
+        "AI-Powered Developer",
       ],
-      typeSpeed: 100,
+      typeSpeed: 80,
       backSpeed: 20,
       backDelay: 2000,
       showCursor: false,
